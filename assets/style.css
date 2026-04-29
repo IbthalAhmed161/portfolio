@@ -510,3 +510,15 @@ h3 {
     font-size: 2rem;
   }
 }
+.cursor-glow {
+  position: fixed;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(199,125,255,0.25), transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.2;
+}
