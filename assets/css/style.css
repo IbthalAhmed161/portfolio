@@ -2,11 +2,13 @@
   --bg:#050816;
   --bg2:#07111f;
   --card:#0f172a;
-  --text:#e5e7eb;
+  --text:#f8fafc;
+  --soft:#cbd5e1;
   --muted:#94a3b8;
   --blue:#2563eb;
   --cyan:#38bdf8;
-  --line:rgba(255,255,255,.11);
+  --ice:#bfdbfe;
+  --line:rgba(255,255,255,.12);
   --glass:rgba(15,23,42,.72);
   --shadow:0 24px 70px rgba(0,0,0,.35);
 }
@@ -21,8 +23,8 @@
 body{
   font-family:"Segoe UI",Tahoma,Verdana,sans-serif;
   background:
-    radial-gradient(circle at 12% 8%,rgba(37,99,235,.28),transparent 30%),
-    radial-gradient(circle at 88% 18%,rgba(56,189,248,.18),transparent 26%),
+    radial-gradient(circle at 12% 8%,rgba(37,99,235,.25),transparent 32%),
+    radial-gradient(circle at 88% 20%,rgba(56,189,248,.16),transparent 28%),
     linear-gradient(180deg,var(--bg),var(--bg2));
   color:var(--text);
   line-height:1.7;
@@ -30,8 +32,8 @@ body{
 }
 
 a{
-  text-decoration:none;
   color:inherit;
+  text-decoration:none;
 }
 
 .container{
@@ -43,9 +45,9 @@ a{
 .nav{
   position:sticky;
   top:0;
-  z-index:50;
+  z-index:100;
+  background:rgba(5,8,22,.86);
   backdrop-filter:blur(18px);
-  background:rgba(5,8,22,.88);
   border-bottom:1px solid var(--line);
 }
 
@@ -57,10 +59,10 @@ a{
 }
 
 .logo{
-  font-size:22px;
+  font-size:23px;
   font-weight:900;
   color:white;
-  letter-spacing:.3px;
+  letter-spacing:.4px;
 }
 
 .logo span{
@@ -69,13 +71,12 @@ a{
 
 .nav-links{
   display:flex;
-  gap:24px;
-  align-items:center;
+  gap:26px;
 }
 
 .nav-links a{
-  font-size:15px;
   color:#cbd5e1;
+  font-size:15px;
   transition:.25s;
 }
 
@@ -95,99 +96,103 @@ a{
 .hero-layout{
   display:grid;
   grid-template-columns:1.15fr .85fr;
+  gap:64px;
   align-items:center;
-  gap:60px;
 }
 
 .hero-text{
   max-width:720px;
+  animation:fadeUp .9s ease forwards;
 }
 
 .badge{
   display:inline-flex;
   align-items:center;
-  background:rgba(37,99,235,.16);
+  color:var(--ice);
+  background:rgba(37,99,235,.15);
   border:1px solid rgba(56,189,248,.28);
-  color:#bfdbfe;
-  padding:9px 15px;
+  padding:9px 16px;
   border-radius:999px;
   font-size:14px;
-  margin-bottom:22px;
+  margin-bottom:24px;
 }
 
 .hero-text h1{
-  font-size:clamp(44px,5.6vw,76px);
+  color:white;
+  font-size:clamp(46px,5.7vw,78px);
   line-height:1.08;
   font-weight:900;
-  margin-bottom:20px;
-  color:white;
+  margin-bottom:22px;
+  letter-spacing:-1.5px;
 }
 
 .hero-text h1 span{
   display:block;
-  background:linear-gradient(90deg,#60a5fa,#38bdf8,#a78bfa);
+  background:linear-gradient(90deg,#93c5fd,#38bdf8,#a78bfa);
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
 }
 
 .hero-text h3{
-  font-size:22px;
   color:#bfdbfe;
+  font-size:22px;
+  font-weight:700;
   margin-bottom:18px;
 }
 
 .hero-text p{
+  color:var(--soft);
   font-size:18px;
-  color:#cbd5e1;
-  max-width:650px;
-  margin-bottom:30px;
+  max-width:660px;
+  margin-bottom:32px;
 }
 
 .btn-row{
   display:flex;
-  gap:14px;
   flex-wrap:wrap;
+  gap:14px;
 }
 
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:13px 20px;
+  padding:13px 22px;
   border-radius:14px;
   font-weight:800;
-  transition:.3s;
+  transition:.3s ease;
   border:1px solid transparent;
 }
 
 .primary{
   background:linear-gradient(135deg,var(--blue),#0ea5e9);
-  box-shadow:0 14px 35px rgba(37,99,235,.36);
+  color:white;
+  box-shadow:0 14px 35px rgba(37,99,235,.34);
 }
 
 .secondary{
+  background:rgba(255,255,255,.04);
   border-color:var(--line);
   color:#e5e7eb;
-  background:rgba(255,255,255,.03);
 }
 
 .btn:hover{
   transform:translateY(-4px);
 }
 
-/* PROFILE */
+/* PROFILE CARD */
 .profile-card{
   width:100%;
   max-width:420px;
   margin-left:auto;
-  background:linear-gradient(180deg,rgba(15,23,42,.84),rgba(17,28,51,.72));
-  border:1px solid var(--line);
-  border-radius:34px;
-  padding:32px;
+  padding:34px;
   text-align:center;
+  border-radius:34px;
+  background:linear-gradient(180deg,rgba(15,23,42,.88),rgba(17,28,51,.72));
+  border:1px solid rgba(255,255,255,.11);
   box-shadow:var(--shadow);
-  animation:float 4.5s ease-in-out infinite;
+  animation:float 5s ease-in-out infinite;
 }
 
 .profile-card img{
@@ -195,34 +200,38 @@ a{
   height:210px;
   border-radius:50%;
   object-fit:cover;
-  border:5px solid rgba(56,189,248,.85);
-  box-shadow:0 0 45px rgba(56,189,248,.22);
-  margin-bottom:20px;
+  border:4px solid rgba(56,189,248,.85);
+  margin-bottom:22px;
+  box-shadow:
+    0 0 24px rgba(56,189,248,.45),
+    0 0 70px rgba(56,189,248,.22),
+    0 0 110px rgba(56,189,248,.12);
 }
 
 .profile-card h2{
+  color:white;
   font-size:26px;
   font-weight:900;
-  color:white;
-  margin-bottom:6px;
+  margin-bottom:8px;
 }
 
 .profile-card p{
   color:#93c5fd;
-  margin-bottom:20px;
+  font-size:15px;
+  margin-bottom:22px;
 }
 
 .chips{
   display:flex;
-  justify-content:center;
   flex-wrap:wrap;
+  justify-content:center;
   gap:10px;
 }
 
 .chips span{
-  background:rgba(56,189,248,.12);
+  color:#dbeafe;
+  background:rgba(56,189,248,.11);
   border:1px solid rgba(56,189,248,.28);
-  color:#bfdbfe;
   padding:8px 12px;
   border-radius:999px;
   font-size:13px;
@@ -235,29 +244,30 @@ a{
 }
 
 .section-title{
-  margin-bottom:34px;
+  max-width:800px;
+  margin-bottom:36px;
 }
 
 .section-title span{
-  color:#38bdf8;
-  font-weight:900;
-  text-transform:uppercase;
-  font-size:13px;
-  letter-spacing:1.5px;
-  margin-bottom:8px;
   display:inline-block;
+  color:var(--cyan);
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  margin-bottom:10px;
 }
 
 .section-title h2{
-  font-size:clamp(30px,4vw,46px);
-  line-height:1.1;
-  margin-bottom:12px;
   color:white;
+  font-size:clamp(30px,4vw,46px);
+  line-height:1.15;
+  margin-bottom:14px;
 }
 
 .section-title p{
   color:var(--muted);
-  max-width:760px;
+  font-size:17px;
 }
 
 .cards,
@@ -272,14 +282,22 @@ a{
   background:var(--glass);
   border:1px solid var(--line);
   border-radius:24px;
-  padding:26px;
+  padding:28px;
   box-shadow:0 18px 48px rgba(0,0,0,.22);
+  transition:.3s ease;
+}
+
+.card:hover,
+.project-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(56,189,248,.32);
 }
 
 .card h3,
 .project-card h3{
-  color:#bfdbfe;
-  margin-bottom:10px;
+  color:#dbeafe;
+  font-size:21px;
+  margin-bottom:12px;
 }
 
 .card p,
@@ -295,8 +313,8 @@ a{
 .project-card::before{
   content:"";
   position:absolute;
-  left:0;
   top:0;
+  left:0;
   width:100%;
   height:5px;
   background:linear-gradient(90deg,var(--blue),var(--cyan));
@@ -304,15 +322,15 @@ a{
 
 .project-tags{
   display:flex;
-  gap:10px;
   flex-wrap:wrap;
-  margin-top:18px;
+  gap:10px;
+  margin-top:20px;
 }
 
 .project-tags span{
-  background:rgba(56,189,248,.1);
-  border:1px solid rgba(56,189,248,.22);
   color:#bfdbfe;
+  background:rgba(56,189,248,.1);
+  border:1px solid rgba(56,189,248,.23);
   padding:7px 12px;
   border-radius:999px;
   font-size:13px;
@@ -321,17 +339,18 @@ a{
 
 .project-links{
   display:flex;
-  gap:12px;
   flex-wrap:wrap;
-  margin-top:22px;
+  gap:12px;
+  margin-top:24px;
 }
 
 .project-links a{
-  padding:10px 14px;
+  padding:10px 15px;
   border-radius:12px;
   background:#2563eb;
-  font-weight:800;
+  color:white;
   font-size:14px;
+  font-weight:800;
 }
 
 .project-links a:nth-child(2){
@@ -339,24 +358,34 @@ a{
   border:1px solid var(--line);
 }
 
-/* FOOTER */
 footer{
-  border-top:1px solid var(--line);
+  text-align:center;
   padding:28px 0;
   color:var(--muted);
-  text-align:center;
+  border-top:1px solid var(--line);
 }
 
-/* ANIMATION */
+/* ANIMATIONS */
 @keyframes float{
   0%,100%{transform:translateY(0)}
   50%{transform:translateY(-14px)}
 }
 
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(28px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
 /* RESPONSIVE */
 @media(max-width:900px){
   .hero{
-    padding:55px 0;
+    padding:56px 0;
   }
 
   .hero-layout{
@@ -365,7 +394,7 @@ footer{
   }
 
   .hero-text{
-    max-width:100%;
+    margin:auto;
   }
 
   .hero-text h1 span{
@@ -379,27 +408,36 @@ footer{
   .profile-card{
     margin:0 auto;
   }
-
-  .nav-links{
-    gap:14px;
-  }
 }
 
 @media(max-width:600px){
   .nav-inner{
     height:auto;
-    padding:16px 0;
+    padding:18px 0;
     flex-direction:column;
-    gap:12px;
+    gap:14px;
+  }
+
+  .nav-links{
+    gap:15px;
+    flex-wrap:wrap;
+    justify-content:center;
   }
 
   .hero-text h1{
     font-size:38px;
   }
 
+  .hero-text p{
+    font-size:16px;
+  }
+
+  .profile-card{
+    padding:26px;
+  }
+
   .profile-card img{
-    width:160px;
-    height:160px;
+    width:165px;
+    height:165px;
   }
 }
-
