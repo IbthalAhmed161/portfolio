@@ -22,12 +22,12 @@ if (glow) {
   interactiveElements.forEach((el) => {
     el.addEventListener("mouseenter", () => {
       glow.style.transform = "translate(-50%, -50%) scale(1.4)";
-      glow.style.opacity = "0.45";
+      glow.style.opacity = "0.75";
     });
 
     el.addEventListener("mouseleave", () => {
       glow.style.transform = "translate(-50%, -50%) scale(1)";
-      glow.style.opacity = "0.35";
+      glow.style.opacity = "0.55";
     });
   });
 }
