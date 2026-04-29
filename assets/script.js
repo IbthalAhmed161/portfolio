@@ -1,16 +1,22 @@
-// reveal on scroll
-const reveals = document.querySelectorAll('.reveal');
+const glow = document.querySelector(".cursor-glow");
 
-function revealOnScroll() {
-  reveals.forEach(el => {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
+// follow mouse
+document.addEventListener("mousemove", (e) => {
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+});
 
-    if (elementTop < windowHeight - 100) {
-      el.classList.add('visible');
-    }
+// interactive effect on hover
+const interactiveElements = document.querySelectorAll("a, button, .project-card");
+
+interactiveElements.forEach(el => {
+  el.addEventListener("mouseenter", () => {
+    glow.style.transform = "translate(-50%, -50%) scale(1.4)";
+    glow.style.opacity = "0.35";
   });
-}
 
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
+  el.addEventListener("mouseleave", () => {
+    glow.style.transform = "translate(-50%, -50%) scale(1)";
+    glow.style.opacity = "0.2";
+  });
+});
