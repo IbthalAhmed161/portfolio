@@ -33,6 +33,21 @@ body {
   background-size: 44px 44px;
 }
 
+.cursor-glow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(199,125,255,0.55), rgba(157,78,221,0.25) 35%, transparent 70%);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.55;
+  mix-blend-mode: screen;
+}
 
 /* Header */
 .site-header {
@@ -49,15 +64,16 @@ body {
 }
 
 .brand {
+  font-size: clamp(1.8rem, 2.6vw, 2.8rem);
   font-weight: 900;
   letter-spacing: -0.05em;
   color: var(--text);
   text-decoration: none;
-  font-size: clamp(2rem, 3vw, 3.2rem);
   text-shadow: 0 0 22px rgba(199, 125, 255, 0.35);
 }
 
-.brand span {
+.brand span,
+.hero-name span {
   background: linear-gradient(90deg, #c77dff, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -83,13 +99,13 @@ body {
   display: none;
 }
 
-/* Sections */
+/* Layout */
 .hero,
 .subhero,
 .section {
   position: relative;
   z-index: 1;
-  padding: 90px 7vw;
+  padding: 82px 7vw;
 }
 
 .hero {
@@ -100,68 +116,91 @@ body {
   min-height: 86vh;
 }
 
+/* Typography */
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: var(--purple2);
   font-weight: 900;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
+  margin-bottom: 12px;
 }
 
-/* Main headings */
 h1 {
-  font-size: clamp(2.2rem, 5vw, 4.7rem);
-  line-height: 1;
-  margin: 12px 0;
-  letter-spacing: -0.05em;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  font-weight: 900;
 }
 
 .hero-name {
-  font-size: clamp(4.2rem, 9vw, 8rem);
-  line-height: 0.88;
-  margin: 16px 0;
-  letter-spacing: -0.075em;
+  font-size: clamp(3.8rem, 7.8vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: -0.07em;
   font-weight: 900;
-  text-shadow: 0 0 30px rgba(157, 78, 221, 0.45);
-}
-
-.hero-name span {
-  background: linear-gradient(90deg, #a855f7, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  margin: 14px 0 18px;
+  text-shadow: 0 0 34px rgba(157, 78, 221, 0.45);
 }
 
 .hero-text {
-  font-size: clamp(1.8rem, 3.2vw, 3.3rem);
-  line-height: 1.05;
+  font-size: clamp(1.55rem, 2.6vw, 2.45rem);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+  color: #f1e8ff;
+  max-width: 920px;
   margin: 0 0 22px;
-  letter-spacing: -0.045em;
-  color: #f2eaff;
 }
 
 h2 {
-  font-size: clamp(1.9rem, 3.6vw, 3.4rem);
-  line-height: 1.05;
-  letter-spacing: -0.05em;
-  margin: 0 0 20px;
+  font-size: clamp(1.75rem, 2.7vw, 2.45rem);
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+  font-weight: 850;
+  color: #f6f0ff;
+  margin-bottom: 18px;
 }
 
 h3 {
-  font-size: 1.4rem;
-  margin: 0 0 12px;
+  font-size: clamp(1.15rem, 1.45vw, 1.35rem);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  font-weight: 850;
+  color: #efe5ff;
+  margin-bottom: 12px;
 }
 
 .lead,
 .subhero p,
-.section p {
+.section p,
+.project-card p,
+.contact-card p,
+.glass-list li {
   color: var(--muted);
-  line-height: 1.8;
-  font-size: 1.05rem;
+  line-height: 1.75;
+  font-size: clamp(0.98rem, 1.1vw, 1.08rem);
+}
+
+.subhero {
+  max-width: 1100px;
+}
+
+.subhero .lead,
+.subhero > p:not(.eyebrow) {
+  max-width: 760px;
 }
 
 /* Buttons */
 .hero-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 14px;
   margin: 30px 0;
 }
@@ -224,7 +263,7 @@ h3 {
 
 .metrics strong {
   display: block;
-  font-size: 1.25rem;
+  font-size: 1.18rem;
 }
 
 .metrics span {
@@ -308,13 +347,13 @@ h3 {
 
 .glass-list li {
   margin: 12px 0;
-  color: var(--muted);
 }
 
 .chips {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  margin-top: 18px;
 }
 
 .chips span {
@@ -323,6 +362,7 @@ h3 {
   background: rgba(199, 125, 255, 0.12);
   border: 1px solid var(--line);
   font-weight: 800;
+  font-size: 0.88rem;
 }
 
 .project-grid {
@@ -336,11 +376,18 @@ h3 {
   min-height: 360px;
 }
 
+.project-card h3,
+.cards article h3 {
+  font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+}
+
 .impact {
   color: #fff !important;
   font-weight: 900;
   border-left: 3px solid var(--purple2);
   padding-left: 16px;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 .timeline {
@@ -356,9 +403,7 @@ h3 {
 }
 
 .contact-card a {
-  display: block;
   color: #fff;
-  margin: 16px 0;
 }
 
 .contact-form {
@@ -483,47 +528,34 @@ h3 {
     flex-direction: column;
   }
 
+  .hero,
+  .subhero,
+  .section {
+    padding: 62px 7vw;
+  }
+
   .hero {
     padding-top: 50px;
   }
 
   .brand {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 
   .hero-name {
-    font-size: 4rem;
-    letter-spacing: -0.055em;
+    font-size: clamp(3.2rem, 14vw, 4.6rem);
+    letter-spacing: -0.06em;
   }
 
   .hero-text {
-    font-size: 2rem;
+    font-size: clamp(1.45rem, 6vw, 2rem);
   }
-}
-.cursor-glow {
-  position: fixed;
-  width: 380px;
-  height: 380px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(199,125,255,0.25), transparent 65%);
-  pointer-events: none;
-  z-index: 0;
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  opacity: 0.2;
-}
-.cursor-glow {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 520px;
-  height: 520px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(199,125,255,0.55), rgba(157,78,221,0.25) 35%, transparent 70%);
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  opacity: 0.55;
-  mix-blend-mode: screen;
+
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .cursor-glow {
+    display: none;
+  }
 }
