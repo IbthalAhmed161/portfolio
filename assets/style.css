@@ -559,3 +559,58 @@ h3 {
     display: none;
   }
 }
+/* =========================
+   GLOBAL TEXT BALANCE FIX
+========================= */
+
+/* كل النصوص العادية */
+p,
+li,
+.lead,
+.section p,
+.subhero p,
+.project-card p,
+.contact-card p,
+.glass-list li,
+.timeline p {
+  font-size: clamp(1.08rem, 1.25vw, 1.25rem);
+  line-height: 1.75;
+  font-weight: 500;
+  color: #d9c9f5;
+}
+
+/* النصوص داخل الكروت */
+.metrics span,
+.chips span,
+.form-note {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* عناوين الكروت */
+.project-card h3,
+.cards article h3,
+.usp-grid h3,
+.contact-card h2,
+.glass-list h3 {
+  font-size: clamp(1.35rem, 1.8vw, 1.65rem);
+  line-height: 1.3;
+  font-weight: 900;
+}
+
+/* أرقام/labels صغيرة */
+.timeline span,
+.usp-grid span {
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+/* خلي الكروت أمتن بصريًا */
+.project-card,
+.cards article,
+.usp-grid article,
+.timeline div,
+.contact-card,
+.glass-list {
+  padding: 30px;
+}
