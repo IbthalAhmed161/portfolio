@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ibthal Ahmed | Certificates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* ── Certificates page extras ── */
+    .cert-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, rgba(157,78,221,.22), rgba(199,125,255,.12));
+      border: 1px solid rgba(199,125,255,.35);
+      border-radius: 999px;
+      padding: 10px 22px;
+      font-weight: 800;
+      font-size: .88rem;
+      color: var(--purple2);
+      margin-bottom: 28px;
+      letter-spacing: .06em;
+    }
+    .cert-hero-badge span { font-size: 1.1rem; }
+
+    /* Professional cert card — full-width highlight */
+    .pro-cert-card {
+      background: linear-gradient(135deg, rgba(157,78,221,.18), rgba(199,125,255,.08));
+      border: 1.5px solid rgba(199,125,255,.45);
+      border-radius: 28px;
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 56px;
+      box-shadow: 0 16px 60px rgba(157,78,221,.3);
+      flex-wrap: wrap;
+    }
+    .pro-cert-left { flex: 1; min-width: 260px; }
+    .pro-cert-left .eyebrow { margin-bottom: 10px; }
+    .pro-cert-left h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); margin: 0 0 10px; letter-spacing: -.05em; }
+    .pro-cert-left p { color: var(--muted); line-height: 1.7; margin: 0 0 24px; }
+    .pro-cert-meta {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .pro-cert-meta div { text-align: left; }
+    .pro-cert-meta strong { display: block; font-size: 1.1rem; color: var(--purple2); }
+    .pro-cert-meta span { color: var(--muted); font-size: .82rem; }
+    .pro-cert-right { text-align: center; flex-shrink: 0; }
+    .google-logo-block {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    }
+    .google-logo-block svg { width: 54px; height: 54px; }
+    .pro-cert-right p { color: var(--muted); font-size: .82rem; margin: 0; }
+
+    /* Course certs grid */
+    .course-certs-title {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--purple2);
+      font-weight: 900;
+      margin-bottom: 24px;
+    }
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .cert-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px 22px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      transition: border-color .3s, transform .3s;
+    }
+    .cert-card:hover {
+      border-color: rgba(199,125,255,.5);
+      transform: translateY(-4px);
+    }
+    .cert-card-top { display: flex; align-items: flex-start; gap: 14px; }
+    .cert-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .cert-icon svg { width: 26px; height: 26px; }
+    .cert-card h3 { font-size: 1rem; margin: 0; line-height: 1.4; font-weight: 700; }
+    .cert-card .cert-date { color: var(--purple2); font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .cert-card .cert-issuer { color: var(--muted); font-size: .82rem; margin: 0; }
+    .cert-card .btn { font-size: .82rem; padding: 10px 16px; align-self: flex-start; }
+
+    @media (max-width: 900px) {
+      .cert-grid { grid-template-columns: 1fr 1fr; }
+      .pro-cert-card { flex-direction: column; }
+    }
+    @media (max-width: 600px) {
+      .cert-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="cursor-glow"></div>
+
+<header class="site-header">
+  <a class="brand" href="index.html"><span>Ibthal</span> Ahmed</a>
+  <button class="nav-toggle" aria-label="toggle navigation">☰</button>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="subhero page-enter">
+    <p class="eyebrow">Certificates</p>
+    <h1>Verified credentials in data analytics and AI.</h1>
+    <p>9 courses completed as part of the Google Data Analytics Professional Certificate — issued by Google via Coursera.</p>
+  </section>
+
+  <section class="section">
+
+    <!-- ── Professional Certificate Highlight ── -->
+    <div class="pro-cert-card reveal">
+      <div class="pro-cert-left">
+        <p class="eyebrow">🏆 Professional Certificate</p>
+        <h2>Google Data Analytics</h2>
+        <p>Completed the full 9-course program developed by Google. Covers spreadsheets, SQL, Tableau, and Python — from data preparation through analysis, visualization, and business storytelling.</p>
+        <div class="pro-cert-meta">
+          <div><strong>9</strong><span>Courses completed</span></div>
+          <div><strong>May 2026</strong><span>Issued date</span></div>
+          <div><strong>Google</strong><span>Authorized by</span></div>
+        </div>
+        <br>
+        <a class="btn primary" href="https://coursera.org/verify/professional-cert/ZT1CKC7ZFYZT" target="_blank">Verify Certificate →</a>
+      </div>
+      <div class="pro-cert-right">
+        <div class="google-logo-block">
+          <!-- Google G SVG -->
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+          </svg>
+        </div>
+        <p>Issued by Google<br>via Coursera · 2026</p>
+      </div>
+    </div>
+
+    <!-- ── Individual Course Certificates ── -->
+    <p class="course-certs-title">Individual Course Certificates</p>
+    <div class="cert-grid">
+
+      <!-- Card 1 -->
+      <article class="cert-card reveal">
+        <div>
+          <div class="cert-card-top">
+            <div class="cert-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="cert-date">Feb 2026</p>
+              <h3>Ask Questions to Make Data-Driven Decisions</h3>
+            </div>
+          </div>
+          <p class="cert-issuer">Google · Coursera</p>
+        </div>
+        <a class="btn ghost" href="https://coursera.org/verify/ZNNONL8BQSKP" target="_blank">Verify →</a>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="cert-card reveal">
+        <div>
+          <div class="cert-card-top">
+            <div class="cert-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="cert-date">Apr 2026</p>
+              <h3>Accelerate Your Job Search with AI</h3>
+            </div>
+          </div>
+          <p class="cert-issuer">Google · Coursera</p>
+        </div>
+        <a class="btn ghost" href="https://coursera.org/verify/HGFO19A2D9WB" target="_blank">Verify →</a>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="cert-card reveal">
+        <div>
+          <div class="cert-card-top">
+            <div class="cert-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="cert-date">May 2026</p>
+              <h3>Prepare Data for Exploration</h3>
+            </div>
+          </div>
+          <p class="cert-issuer">Google · Coursera</p>
+        </div>
+        <a class="btn ghost" href="https://coursera.org/verify/5GYQ8O0LGU90" target="_blank">Verify →</a>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="cert-card reveal">
+        <div>
+          <div class="cert-card-top">
+            <div class="cert-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="cert-date">May 2026</p>
+              <h3>Process Data from Dirty to Clean</h3>
+            </div>
+          </div>
+          <p class="cert-issuer">Google · Coursera</p>
+        </div>
+        <a class="btn ghost" href="https://coursera.org/verify/H7PNA7JID15Q" target="_blank">Verify →</a>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="cert-card reveal">
+        <div>
+          <div class="cert-card-top">
+            <div class="cert-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="cert-date">May 2026</p>
+              <h3>Analyze Data to Answer Questions</h3>
+            </div>
+          </div>
+          <p class="cert-issuer">Google · Coursera</p>
+        </div>
+        <a class="btn ghost" href="https://coursera.org/verify/X1AIE9H4SC6G" target="_blank">Verify →</a>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="cert-card reveal">
+        <div>
+          <div class="cert-card-top">
+            <div class="cert-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="cert-date">May 2026</p>
+              <h3>Share Data Through the Art of Visualization</h3>
+            </div>
+          </div>
+          <p class="cert-issuer">Google · Coursera</p>
+        </div>
+        <a class="btn ghost" href="https://coursera.org/verify/FV7IEA7RU4MD" target="_blank">Verify →</a>
+      </article>
+
+      <!-- Card 7 -->
+      <article class="cert-card reveal">
+        <div>
+          <div class="cert-card-top">
+            <div class="cert-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="cert-date">May 2026</p>
+              <h3>Introduction to Data Analysis Using Python</h3>
+            </div>
+          </div>
+          <p class="cert-issuer">Google · Coursera</p>
+        </div>
+        <a class="btn ghost" href="https://coursera.org/verify/PXPCAWGB9SZL" target="_blank">Verify →</a>
+      </article>
+
+      <!-- Card 8 -->
+      <article class="cert-card reveal">
+        <div>
+          <div class="cert-card-top">
+            <div class="cert-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="cert-date">May 2026</p>
+              <h3>Google Data Analytics Capstone: Complete a Case Study</h3>
+            </div>
+          </div>
+          <p class="cert-issuer">Google · Coursera</p>
+        </div>
+        <a class="btn ghost" href="https://coursera.org/verify/5895U9UVQ0BV" target="_blank">Verify →</a>
+      </article>
+
+      <!-- Card 9 — Foundations (no separate PDF but part of the 9) -->
+      <article class="cert-card reveal">
+        <div>
+          <div class="cert-card-top">
+            <div class="cert-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="cert-date">2026</p>
+              <h3>Foundations: Data, Data, Everywhere</h3>
+            </div>
+          </div>
+          <p class="cert-issuer">Google · Coursera</p>
+        </div>
+        <a class="btn ghost" href="https://coursera.org/verify/professional-cert/ZT1CKC7ZFYZT" target="_blank">Verify Program →</a>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>Built for decision-grade AI, clean analytics, and business impact.</p>
+  <a href="contact.html">Let's build something intelligent →</a>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
