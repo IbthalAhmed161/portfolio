@@ -74,7 +74,7 @@ h3{font-size:var(--fs-xl);font-weight:var(--fw-semibold);margin:0 0 12px}
 .hero-visual{position:relative;min-height:520px;display:grid;place-items:center}
 .hero-visual img{width:min(390px,86%);aspect-ratio:1/1.15;object-fit:cover;border-radius:42px;border:1px solid var(--line);box-shadow:var(--shadow);filter:saturate(1.05) contrast(1.05)}
 .orb{position:absolute;width:420px;height:420px;border-radius:50%;background:linear-gradient(135deg,#7b2cbf,#e0aaff);filter:blur(18px);opacity:.42;animation:pulse 5s infinite alternate}
-.floating-card{position:absolute;background:rgba(10,4,20,.78);border:1px solid var(--line);border-radius:18px;padding:14px 18px;font-weight:var(--fw-bold);font-size:var(--fs-sm);box-shadow:var(--shadow)}
+.floating-card{position:absolute;background:rgba(10,4,20,.78);border:1px solid var(--line);border-radius:18px;padding:14px 22px;font-weight:var(--fw-bold);font-size:1rem;line-height:1.3;white-space:nowrap;min-width:200px;text-align:center;box-shadow:var(--shadow)}
 .one{top:75px;left:10px;animation:float 4s infinite}
 .two{bottom:75px;right:0;animation:float 5s infinite reverse}
 
